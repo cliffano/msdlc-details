@@ -1,43 +1,50 @@
-# pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,duplicate-code,too-many-locals
-from unittest.mock import patch
-import unittest.mock
+"""Unit tests for msdlcdetails.get_details."""
+
 import unittest
-from msdlcdetails import Display
+from unittest.mock import MagicMock, patch
 
-class TestMSDLC Details(unittest.TestCase):
+from msdlcdetails import InvalidUrlError, get_details
+from tests.fixtures import SINGLE_FILE_VIEW, build_html
 
-    @patch('msdlcdetails.load')
-    @patch('msdlcdetails.init')
-    def test_display_with_lower_non_reverse( # pylint: disable=too-many-arguments
-            self,
-            func_init,
-            func_load):
+URL = "https://www.microsoft.com/en-us/download/details.aspx?id=56519"
 
-        mock_logger = unittest.mock.Mock()
 
-        func_init.return_value = mock_logger
-        func_load.return_value = {
-            'text': 'Hello World'
-        }
+class TestGetDetails(unittest.TestCase):
+    """Tests for get_details function."""
 
-        display = Display(conf_file='msdlcdetails.yaml')
-        text = display.format(reverse=False, transformation='lower')
-        assert text == 'hello world'
+    @patch("msdlcdetails.fetch_html")
+    @patch("msdlcdetails.init")
+    def test_retrieves_details_by_id(self, mock_init, mock_fetch_html):
+        """Test retrieving details by download ID."""
+        mock_logger = MagicMock()
+        mock_init.return_value = mock_logger
+        mock_fetch_html.return_value = build_html({"dlcDetailsView": SINGLE_FILE_VIEW})
 
-    @patch('msdlcdetails.load')
-    @patch('msdlcdetails.init')
-    def test_display_with_upper_reverse( # pylint: disable=too-many-arguments
-            self,
-            func_init,
-            func_load):
+        details = get_details(56519, timeout=10)
 
-        mock_logger = unittest.mock.Mock()
+        mock_fetch_html.assert_called_once_with(URL, timeout=10)
+        self.assertEqual(details.url, URL)
+        self.assertTrue(
+            details.download_url.endswith("ServiceTags_Public_20261102.json")
+        )
+        mock_logger.info.assert_any_call("Retrieving download details from %s", URL)
+        mock_logger.info.assert_any_call("Found %s file(s) for download %s", 1, URL)
 
-        func_init.return_value = mock_logger
-        func_load.return_value = {
-            'text': 'Hello World'
-        }
+    @patch("msdlcdetails.fetch_html")
+    @patch("msdlcdetails.init")
+    def test_locale_override(self, _, mock_fetch_html):
+        """Test that the locale argument overrides the URL locale."""
+        mock_fetch_html.return_value = build_html({"dlcDetailsView": SINGLE_FILE_VIEW})
+        get_details(URL, locale="ja-jp")
+        self.assertEqual(
+            mock_fetch_html.call_args[0][0],
+            "https://www.microsoft.com/ja-jp/download/details.aspx?id=56519",
+        )
 
-        display = Display(conf_file='msdlcdetails.yaml')
-        text = display.format(reverse=True, transformation='upper')
-        assert text == 'DLROW OLLEH'
+    @patch("msdlcdetails.fetch_html")
+    @patch("msdlcdetails.init")
+    def test_invalid_url_is_not_fetched(self, _, mock_fetch_html):
+        """Test that invalid URLs raise before any request is sent."""
+        with self.assertRaises(InvalidUrlError):
+            get_details("https://example.com/download/details.aspx?id=1")
+        mock_fetch_html.assert_not_called()

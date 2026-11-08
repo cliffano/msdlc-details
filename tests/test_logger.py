@@ -1,11 +1,17 @@
-# pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,duplicate-code,too-many-locals
+"""Unit tests for msdlcdetails.logger."""
+
 import logging
 import unittest
-from msdlcdetails.logger import init
 
-class TesLogger(unittest.TestCase):
+from msdlcdetails import logger
 
-    def test_init(self):
 
-        logger = init()
-        assert isinstance(logger, logging.LoggerAdapter) is True
+class TestLogger(unittest.TestCase):
+    """Tests for init function."""
+
+    def test_init_creates_and_caches_logger(self):
+        """Test that init creates a logger once and then reuses it."""
+        logger.LOGGER = None
+        first = logger.init()
+        self.assertIsInstance(first, logging.LoggerAdapter)
+        self.assertIs(logger.init(), first)

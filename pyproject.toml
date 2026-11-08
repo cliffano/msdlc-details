@@ -15,7 +15,7 @@ readme = "README.md"
 homepage = "https://github.com/cliffano/msdlc-details"
 repository = "https://github.com/cliffano/msdlc-details"
 documentation = "https://github.com/cliffano/msdlc-details"
-keywords = [ "msdlcdetails", "..." ]
+keywords = [ "msdlcdetails", "microsoft", "download-center", "download" ]
 classifiers = [
   "Programming Language :: Python :: 3",
   "License :: OSI Approved :: Apache Software License",
@@ -28,7 +28,6 @@ include = "msdlcdetails"
 [tool.poetry.dependencies]
 python = "^3.12"
 conflog = "~2.1.0"
-PyYAML = "~6.0.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "~25.12.0"

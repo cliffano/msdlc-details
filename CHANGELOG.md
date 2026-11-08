@@ -9,3 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial version
+- Add `get_details` to retrieve Microsoft Download Center download details,
+  including the current Download button file URL
+- Add `parse_details` to parse details from page HTML
+- Add URL helpers `parse_url`, `build_url` and `normalise_url`
