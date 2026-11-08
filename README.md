@@ -1,9 +1,13 @@
 <!-- BEGIN:AVATAR -->
-To be populated by generator-python python-lib-partials
+![Avatar](avatar.jpg)
 <!-- END:AVATAR -->
 
 <!-- BEGIN:BADGES -->
-To be populated by generator-python python-lib-partials
+[![Build Status](https://github.com/cliffano/msdlc-details/workflows/CI/badge.svg)](https://github.com/cliffano/msdlc-details/actions?query=workflow%3ACI)
+[![Code Scanning Status](https://github.com/cliffano/msdlc-details/workflows/CodeQL/badge.svg)](https://github.com/cliffano/msdlc-details/actions?query=workflow%3ACodeQL)
+[![Dependencies Status](https://img.shields.io/librariesio/release/pypi/msdlcdetails)](https://libraries.io/npm/msdlcdetails)
+[![Security Status](https://snyk.io/test/github/cliffano/msdlc-details/badge.svg)](https://snyk.io/test/github/cliffano/msdlc-details)
+[![Published Version](https://img.shields.io/pypi/v/msdlcdetails.svg)](https://pypi.python.org/pypi/msdlcdetails)
 <!-- END:BADGES -->
 
 # MSDLC Details
@@ -99,9 +103,17 @@ clients.
 ## Colophon
 
 <!-- BEGIN:DEVELOPERS_GUIDE -->
-To be populated by generator-python python-lib-partials
+[Developer's Guide](https://cliffano.github.io/developers-guide-python.html)
 <!-- END:DEVELOPERS_GUIDE -->
 
 <!-- BEGIN:BUILD_REPORTS -->
-To be populated by generator-python python-lib-partials
+Build reports:
+
+* [Lint report](https://cliffano.github.io/msdlc-details/lint/pylint/index.html)
+* [Code complexity report](https://cliffano.github.io/msdlc-details/complexity/radon/index.html)
+* [Unit tests report](https://cliffano.github.io/msdlc-details/test/pytest/index.html)
+* [Test coverage report](https://cliffano.github.io/msdlc-details/coverage/coverage/index.html)
+* [Integration tests report](https://cliffano.github.io/msdlc-details/test-integration/pytest/index.html)
+* [API Documentation](https://cliffano.github.io/msdlc-details/doc/sphinx/index.html)
+
 <!-- END:BUILD_REPORTS -->
