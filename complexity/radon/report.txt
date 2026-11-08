@@ -1,26 +1,18 @@
-msdlcdetails/__init__.py - A
-msdlcdetails/fetcher.py - A
-msdlcdetails/parser.py - A
 msdlcdetails/url.py - A
+msdlcdetails/fetcher.py - A
 msdlcdetails/logger.py - A
 msdlcdetails/errors.py - A
-msdlcdetails/models/__init__.py - A
+msdlcdetails/parser.py - A
+msdlcdetails/__init__.py - A
 msdlcdetails/models/download_details.py - A
-msdlcdetails/__init__.py
-    F 21:0 get_details - A (1)
-msdlcdetails/fetcher.py
-    F 29:0 fetch_html - B (6)
-    F 69:0 _read - A (2)
-msdlcdetails/parser.py
-    F 58:0 parse_details - B (8)
-    F 27:0 extract_state - B (7)
-    F 112:0 _parse_int - A (2)
-    F 124:0 _parse_datetime - A (2)
-    F 94:0 _parse_file - A (1)
+msdlcdetails/models/__init__.py - A
 msdlcdetails/url.py
     F 38:0 parse_url - B (8)
     F 22:0 build_url - A (3)
     F 75:0 normalise_url - A (2)
+msdlcdetails/fetcher.py
+    F 29:0 fetch_html - B (6)
+    F 69:0 _read - A (2)
 msdlcdetails/logger.py
     F 9:0 init - A (2)
 msdlcdetails/errors.py
@@ -29,6 +21,14 @@ msdlcdetails/errors.py
     C 8:0 InvalidUrlError - A (1)
     M 23:4 FetchError.__init__ - A (1)
     C 29:0 DetailsNotFoundError - A (1)
+msdlcdetails/parser.py
+    F 58:0 parse_details - B (8)
+    F 27:0 extract_state - B (7)
+    F 112:0 _parse_int - A (2)
+    F 124:0 _parse_datetime - A (2)
+    F 94:0 _parse_file - A (1)
+msdlcdetails/__init__.py
+    F 21:0 get_details - A (1)
 msdlcdetails/models/download_details.py
     C 67:0 DownloadDetails - A (4)
     M 127:4 DownloadDetails.primary_file - A (4)
