@@ -12,3 +12,4 @@ generator:
     author_url: null
     github_id: cliffano
     github_repo: msdlc-details
+    github_token_prefix: STUDIO
