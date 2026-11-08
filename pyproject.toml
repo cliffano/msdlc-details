@@ -1,0 +1,50 @@
+[build-system]
+requires = [ "poetry-core" ]
+build-backend = "poetry.core.masonry.api"
+
+[installer]
+no-binary = [ ":none:" ]
+
+[tool.poetry]
+name = "msdlcdetails"
+version = "0.9.0-pre.0"
+description = "Micro library for retrieving Microsoft Download Center page details"
+license = "Apache-2.0"
+authors = [ "Cliffano Subagio <cliffano@gmail.com>" ]
+readme = "README.md"
+homepage = "https://github.com/cliffano/msdlc-details"
+repository = "https://github.com/cliffano/msdlc-details"
+documentation = "https://github.com/cliffano/msdlc-details"
+keywords = [ "msdlcdetails", "..." ]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent"
+]
+
+[[tool.poetry.packages]]
+include = "msdlcdetails"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+conflog = "~2.1.0"
+PyYAML = "~6.0.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "~25.12.0"
+twine = "~6.2.0"
+wheel = "~0.45.1"
+
+[tool.poetry.group.test.dependencies]
+bandit = "~1.9.4"
+coverage = "~7.13.0"
+numpy = "1.26.4" # https://stackoverflow.com/questions/78634235/numpy-dtype-size-changed-may-indicate-binary-incompatibility-expected-96-from
+pylint = "~4.0.4"
+pytest = "~9.0.2"
+radon = "~6.0.1"
+
+[tool.poetry.group.doc.dependencies]
+ansi2html = "~1.9.2"
+pylint-report = "~2.4.2"
+pytest-html = "~4.1.1"
+Sphinx = "9.1.1" # Pinned for Python 3.12 support

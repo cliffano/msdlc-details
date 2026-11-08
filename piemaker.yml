@@ -1,0 +1,14 @@
+---
+author: Cliffano Subagio
+package_name: msdlcdetails
+generator:
+  component: python-lib
+  inputs:
+    project_id: msdlcdetails
+    project_name: MSDLC Details
+    project_desc: Micro library for retrieving Microsoft Download Center page details
+    author_name: Cliffano Subagio
+    author_email: cliffano@gmail.com
+    author_url: null
+    github_id: cliffano
+    github_repo: msdlc-details
