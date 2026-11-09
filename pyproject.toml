@@ -8,7 +8,7 @@ no-binary = [ ":none:" ]
 [tool.poetry]
 name = "msdlcdetails"
 version = "0.9.0-pre.0"
-description = "Micro library for retrieving Microsoft Download Center page details"
+description = "Tiny python library for retrieving Microsoft Download Center page details"
 license = "Apache-2.0"
 authors = [ "Cliffano Subagio <cliffano@gmail.com>" ]
 readme = "README.md"

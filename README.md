@@ -12,7 +12,7 @@
 
 # MSDLC Details
 
-MSDLC Details is a micro library for retrieving Microsoft Download Center page details.
+MSDLC Details is a tiny Python library for retrieving Microsoft Download Center page details.
 
 A Download Center details page such as
 <https://www.microsoft.com/en-us/download/details.aspx?id=56519> keeps a stable
