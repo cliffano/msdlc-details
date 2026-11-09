@@ -7,7 +7,7 @@ no-binary = [ ":none:" ]
 
 [tool.poetry]
 name = "msdlcdetails"
-version = "0.9.0-pre.0"
+version = "1.0.0"
 description = "Tiny python library for retrieving Microsoft Download Center page details"
 license = "Apache-2.0"
 authors = [ "Cliffano Subagio <cliffano@gmail.com>" ]
@@ -22,12 +22,12 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 
-[[tool.poetry.packages]]
-include = "msdlcdetails"
+  [[tool.poetry.packages]]
+  include = "msdlcdetails"
 
-[tool.poetry.dependencies]
-python = "^3.12"
-conflog = "~2.1.2"
+  [tool.poetry.dependencies]
+  python = "^3.12"
+  conflog = "~2.1.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "~26.10.1"
@@ -37,7 +37,7 @@ wheel = "~0.48.0"
 [tool.poetry.group.test.dependencies]
 bandit = "~1.9.4"
 coverage = "~7.17.2"
-numpy = "1.26.4" # https://stackoverflow.com/questions/78634235/numpy-dtype-size-changed-may-indicate-binary-incompatibility-expected-96-from
+numpy = "1.26.4"
 pylint = "~4.1.3"
 pytest = "~9.2.0"
 radon = "~6.0.1"
@@ -46,4 +46,4 @@ radon = "~6.0.1"
 ansi2html = "~1.9.5"
 pylint-report = "~2.4.2"
 pytest-html = "~4.2.0"
-Sphinx = "9.1.1" # Pinned for Python 3.12 support
+Sphinx = "9.1.1"
